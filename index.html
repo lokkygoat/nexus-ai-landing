@@ -1,0 +1,670 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>NEXUS AI — Автоматизация бизнеса с помощью ИИ</title>
+<meta name="description" content="Автоматизируем бизнес с помощью AI агентов, голосовых ботов и чат-решений. Прототип за 3 дня. Бесплатный аудит.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+</head>
+<body>
+
+<!-- CURSOR -->
+<div id="cursor"></div>
+<div id="cursor-follower"></div>
+
+<!-- PROGRESS BAR -->
+<div id="progress-bar"></div>
+
+<!-- GRID BG -->
+<div class="grid-bg"></div>
+
+<!-- EASTER EGG OVERLAY -->
+<div id="easter-egg">
+  <div class="ee-text">🤖</div>
+  <div class="ee-title">Ты нашёл секрет!</div>
+  <div class="ee-sub">Konami Code активирован. Ты наш.</div>
+  <button id="ee-close">Продолжить</button>
+</div>
+
+<!-- NAVBAR -->
+<nav id="navbar">
+  <div class="nav-logo">NEXUS<span>.</span>AI</div>
+  <ul class="nav-links">
+    <li><a href="#services">Услуги</a></li>
+    <li><a href="#calculator">Калькулятор</a></li>
+    <li><a href="#cases">Кейсы</a></li>
+    <li><a href="#pricing">Тарифы</a></li>
+    <li><a href="#faq">FAQ</a></li>
+  </ul>
+  <button class="nav-cta btn-liquid" onclick="addRipple(event, this)">
+    <span>Получить демо</span>
+  </button>
+</nav>
+
+<!-- ═══════ HERO ═══════ -->
+<section id="hero">
+  <!-- Ambient blobs -->
+  <div class="hero-blob hero-blob-1"></div>
+  <div class="hero-blob hero-blob-2"></div>
+  <div class="hero-blob hero-blob-3"></div>
+
+  <canvas id="neural-canvas"></canvas>
+
+  <div class="hero-content">
+    <div class="hero-badge">
+      <span class="dot"></span>
+      Доступно прямо сейчас · Без очереди
+    </div>
+    <h1 class="hero-title">
+      <span class="glitch" data-text="Будущее">Будущее</span><br>
+      уже работает
+    </h1>
+    <p class="hero-typewriter">
+      Мы автоматизируем вашу <span class="typewriter-word" id="typewriter"></span>
+    </p>
+    <div class="hero-buttons">
+      <a href="#calculator" class="btn-primary magnetic btn-liquid" onclick="addRipple(event, this)">
+        Рассчитать ROI <span class="btn-arrow">→</span>
+      </a>
+      <a href="#cases" class="btn-secondary magnetic btn-liquid">
+        Смотреть кейсы <span class="btn-arrow">↓</span>
+      </a>
+    </div>
+  </div>
+
+  <div class="hero-scroll">
+    <div class="hero-scroll-line"></div>
+    scroll
+  </div>
+</section>
+
+<!-- ═══════ STATS ═══════ -->
+<section id="stats">
+  <div class="stats-grid">
+    <div class="stat-item">
+      <div class="stat-number"><span class="count" data-target="340">0</span>+</div>
+      <div class="stat-label">Проектов запущено</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-number"><span class="count" data-target="85">0</span>%</div>
+      <div class="stat-label">Рутины убирает AI</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-number">₽<span class="count" data-target="2400">0</span>М</div>
+      <div class="stat-label">Сэкономлено клиентам</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-number"><span class="count" data-target="24">0</span>/7</div>
+      <div class="stat-label">Работают агенты</div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════ MARQUEE ═══════ -->
+<div class="marquee-section">
+  <div class="marquee-track" id="marquee-track"></div>
+</div>
+
+<!-- ═══════ SERVICES ═══════ -->
+<section id="services">
+  <div class="services-header reveal">
+    <div class="section-tag">Что мы делаем</div>
+    <h2 class="section-title">Услуги, которые<br>меняют бизнес</h2>
+    <p class="section-subtitle">Внедряем AI туда, где это даёт максимальный результат. Никаких пилотов ради пилотов.</p>
+  </div>
+  <div class="services-grid">
+
+    <!-- AI Автоматизация -->
+    <div class="service-card tilt-card">
+      <div class="service-icon-wrap" style="background:rgba(124,58,237,0.12)">
+        <svg viewBox="0 0 24 24" fill="none" stroke="#a78bfa" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <circle cx="12" cy="12" r="3"/>
+          <path d="M12 1v4M12 19v4M4.22 4.22l2.83 2.83M16.95 16.95l2.83 2.83M1 12h4M19 12h4M4.22 19.78l2.83-2.83M16.95 7.05l2.83-2.83"/>
+        </svg>
+      </div>
+      <h3 class="service-title">AI Автоматизация</h3>
+      <p class="service-desc">Убираем ручной труд из бизнес-процессов. Боты делают за людей всё что можно повторить.</p>
+      <a href="#" class="service-link">
+        Подробнее
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M5 12h14M12 5l7 7-7 7"/>
+        </svg>
+      </a>
+    </div>
+
+    <!-- Голосовые агенты -->
+    <div class="service-card tilt-card">
+      <div class="service-icon-wrap" style="background:rgba(6,182,212,0.1)">
+        <svg viewBox="0 0 24 24" fill="none" stroke="#22d3ee" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"/>
+          <path d="M19 10v2a7 7 0 0 1-14 0v-2M12 19v4M8 23h8"/>
+        </svg>
+      </div>
+      <h3 class="service-title">Голосовые агенты</h3>
+      <p class="service-desc">Звонят, отвечают и продают 24/7. Не устают, не болеют, не уходят в отпуск.</p>
+      <a href="#" class="service-link">
+        Подробнее
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M5 12h14M12 5l7 7-7 7"/>
+        </svg>
+      </a>
+    </div>
+
+    <!-- AI Чат-боты -->
+    <div class="service-card tilt-card">
+      <div class="service-icon-wrap" style="background:rgba(16,185,129,0.1)">
+        <svg viewBox="0 0 24 24" fill="none" stroke="#34d399" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
+          <path d="M8 10h.01M12 10h.01M16 10h.01"/>
+        </svg>
+      </div>
+      <h3 class="service-title">AI Чат-боты</h3>
+      <p class="service-desc">Telegram, WhatsApp, сайт. Умные, обученные на вашем бизнесе, закрывают до 80% запросов.</p>
+      <a href="#" class="service-link">
+        Подробнее
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M5 12h14M12 5l7 7-7 7"/>
+        </svg>
+      </a>
+    </div>
+
+    <!-- AI Аналитика -->
+    <div class="service-card tilt-card">
+      <div class="service-icon-wrap" style="background:rgba(244,63,94,0.1)">
+        <svg viewBox="0 0 24 24" fill="none" stroke="#fb7185" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <line x1="18" y1="20" x2="18" y2="10"/>
+          <line x1="12" y1="20" x2="12" y2="4"/>
+          <line x1="6"  y1="20" x2="6"  y2="14"/>
+          <line x1="2"  y1="20" x2="22" y2="20"/>
+        </svg>
+      </div>
+      <h3 class="service-title">AI Аналитика</h3>
+      <p class="service-desc">Дашборды, предсказания, инсайты. Данные превращаются в решения автоматически.</p>
+      <a href="#" class="service-link">
+        Подробнее
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M5 12h14M12 5l7 7-7 7"/>
+        </svg>
+      </a>
+    </div>
+
+    <!-- AI Контент -->
+    <div class="service-card tilt-card">
+      <div class="service-icon-wrap" style="background:rgba(251,146,60,0.1)">
+        <svg viewBox="0 0 24 24" fill="none" stroke="#fb923c" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/>
+          <path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"/>
+        </svg>
+      </div>
+      <h3 class="service-title">AI Контент</h3>
+      <p class="service-desc">Посты, скрипты, письма, объявления. Контент-машина которая не устаёт.</p>
+      <a href="#" class="service-link">
+        Подробнее
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M5 12h14M12 5l7 7-7 7"/>
+        </svg>
+      </a>
+    </div>
+
+    <!-- AI CRM -->
+    <div class="service-card tilt-card">
+      <div class="service-icon-wrap" style="background:rgba(124,58,237,0.12)">
+        <svg viewBox="0 0 24 24" fill="none" stroke="#a78bfa" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
+        </svg>
+      </div>
+      <h3 class="service-title">AI CRM</h3>
+      <p class="service-desc">Автоматические воронки, тёплые лиды, персонализированные follow-up на автопилоте.</p>
+      <a href="#" class="service-link">
+        Подробнее
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M5 12h14M12 5l7 7-7 7"/>
+        </svg>
+      </a>
+    </div>
+
+  </div>
+</section>
+
+<!-- ═══════ ROI CALCULATOR ═══════ -->
+<section id="calculator">
+  <div class="calc-wrapper">
+    <div class="calc-header reveal">
+      <div class="section-tag">ROI Калькулятор</div>
+      <h2 class="section-title">Сколько вы теряете<br>прямо сейчас?</h2>
+      <p class="section-subtitle" style="margin:0 auto">Подвигайте ползунки — мы посчитаем, сколько денег уходит на рутину и сколько вернёт AI.</p>
+    </div>
+    <div class="calc-box reveal">
+      <div class="calc-inputs">
+        <div class="calc-group">
+          <div class="calc-label">
+            <span class="calc-label-text">Сотрудников в команде</span>
+            <span class="calc-value" id="val-emp">15</span>
+          </div>
+          <input type="range" id="range-emp" min="1" max="100" value="15">
+        </div>
+        <div class="calc-group">
+          <div class="calc-label">
+            <span class="calc-label-text">Часов рутины в день</span>
+            <span class="calc-value" id="val-hours">3 ч</span>
+          </div>
+          <input type="range" id="range-hours" min="1" max="8" value="3" step="0.5">
+        </div>
+        <div class="calc-group">
+          <div class="calc-label">
+            <span class="calc-label-text">Средняя зарплата сотрудника</span>
+            <span class="calc-value" id="val-salary">80 000 ₽</span>
+          </div>
+          <input type="range" id="range-salary" min="30000" max="300000" value="80000" step="5000">
+        </div>
+        <div class="calc-hourly-box">
+          <div class="calc-hourly-label">Стоимость 1 часа работы</div>
+          <div class="calc-hourly-val" id="hourly-rate">500 ₽/ч</div>
+        </div>
+      </div>
+      <div class="calc-results">
+        <div class="calc-result-card">
+          <div class="calc-result-label">
+            <span class="calc-result-indicator red"></span>
+            Вы теряете в месяц
+          </div>
+          <div class="calc-result-value red" id="result-loss">0 ₽</div>
+        </div>
+        <div class="calc-result-card green-card">
+          <div class="calc-result-label">
+            <span class="calc-result-indicator green"></span>
+            Экономия с NEXUS AI
+          </div>
+          <div class="calc-result-value green" id="result-save">0 ₽</div>
+        </div>
+        <div class="calc-result-card cyan-card">
+          <div class="calc-result-label">
+            <span class="calc-result-indicator cyan"></span>
+            Окупаемость внедрения
+          </div>
+          <div class="calc-result-value cyan" id="result-payback">0 дней</div>
+        </div>
+        <button class="calc-cta btn-liquid magnetic" onclick="addRipple(event, this)">
+          Хочу сэкономить → получить план
+        </button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════ HOW IT WORKS ═══════ -->
+<section id="how">
+  <div class="how-wrapper">
+    <div class="how-steps">
+      <div class="reveal" style="margin-bottom:48px">
+        <div class="section-tag">Как мы работаем</div>
+        <h2 class="section-title">От идеи до<br>запущенного AI</h2>
+      </div>
+      <div class="how-steps-list">
+        <div class="step">
+          <div class="step-num">01</div>
+          <div class="step-content">
+            <div class="step-title">Аудит и цели</div>
+            <div class="step-desc">Разбираем бизнес-процессы, находим где AI даст максимум, ставим чёткие KPI.</div>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num">02</div>
+          <div class="step-content">
+            <div class="step-title">Проектирование</div>
+            <div class="step-desc">Проектируем архитектуру. Прототип за 3 дня — видите результат до оплаты разработки.</div>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num">03</div>
+          <div class="step-content">
+            <div class="step-title">Разработка и тест</div>
+            <div class="step-desc">Строим, тестируем, дорабатываем. Спринты по 2 недели — всегда знаете статус.</div>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num">04</div>
+          <div class="step-content">
+            <div class="step-title">Запуск и рост</div>
+            <div class="step-desc">Интеграция в ваши системы. Обучение команды. Поддержка и апдейты 24/7.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="how-visual reveal">
+      <div class="visual-card">
+        <div class="visual-card-header">
+          <div class="visual-card-title">Живые метрики клиента</div>
+          <div class="visual-card-status">
+            <div class="visual-card-status-dot"></div>
+            Live
+          </div>
+        </div>
+        <div class="metric-row">
+          <span class="metric-name">Обработано заявок</span>
+          <span class="metric-val up">+2 847</span>
+        </div>
+        <div style="padding:4px 0 10px">
+          <div class="metric-bar"><div class="metric-fill" style="background:linear-gradient(90deg,var(--green),var(--cyan-light))" data-width="78"></div></div>
+        </div>
+        <div class="metric-row">
+          <span class="metric-name">Время ответа</span>
+          <span class="metric-val neutral">1.2 сек</span>
+        </div>
+        <div style="padding:4px 0 10px">
+          <div class="metric-bar"><div class="metric-fill" data-width="92"></div></div>
+        </div>
+        <div class="metric-row">
+          <span class="metric-name">Экономия в месяц</span>
+          <span class="metric-val up">₽380 000</span>
+        </div>
+        <div style="padding:4px 0 10px">
+          <div class="metric-bar"><div class="metric-fill" style="background:linear-gradient(90deg,var(--purple),var(--purple-light))" data-width="65"></div></div>
+        </div>
+        <div class="metric-row">
+          <span class="metric-name">Ручной труд</span>
+          <span class="metric-val down">−83%</span>
+        </div>
+        <div style="padding:4px 0 10px">
+          <div class="metric-bar"><div class="metric-fill" style="background:linear-gradient(90deg,var(--red),var(--purple))" data-width="83"></div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════ CASES ═══════ -->
+<section id="cases">
+  <div class="cases-header reveal">
+    <div class="section-tag">Кейсы</div>
+    <h2 class="section-title">Реальные результаты</h2>
+    <p class="section-subtitle">Не обещания — цифры. Вот что происходит когда AI встречает бизнес.</p>
+  </div>
+  <div class="cases-grid">
+    <div class="case-card">
+      <div class="case-tag">Ритейл</div>
+      <h3 class="case-title">Автоматизация поддержки MegaShop</h3>
+      <p class="case-desc">AI-агент закрывает 80% обращений без участия человека. Время ответа — 2 секунды.</p>
+      <div class="case-result">
+        <div class="case-metric">
+          <div class="case-metric-val">−80%</div>
+          <div class="case-metric-label">нагрузки на support</div>
+        </div>
+        <div class="case-metric">
+          <div class="case-metric-val">×3.2</div>
+          <div class="case-metric-label">скорость обработки</div>
+        </div>
+      </div>
+    </div>
+    <div class="case-card">
+      <div class="case-tag">Недвижимость</div>
+      <h3 class="case-title">Голосовой агент для ColonyEstate</h3>
+      <p class="case-desc">Обзванивает базу, квалифицирует лиды и записывает на просмотры 24/7.</p>
+      <div class="case-result">
+        <div class="case-metric">
+          <div class="case-metric-val">+340%</div>
+          <div class="case-metric-label">квалифицированных лидов</div>
+        </div>
+        <div class="case-metric">
+          <div class="case-metric-val">₽1.2М</div>
+          <div class="case-metric-label">экономия в месяц</div>
+        </div>
+      </div>
+    </div>
+    <div class="case-card">
+      <div class="case-tag">EdTech</div>
+      <h3 class="case-title">AI-воронка для EduPlatform</h3>
+      <p class="case-desc">Персонализированные follow-up, автозаписи на вебинары, напоминания.</p>
+      <div class="case-result">
+        <div class="case-metric">
+          <div class="case-metric-val">+67%</div>
+          <div class="case-metric-label">конверсия в продажу</div>
+        </div>
+        <div class="case-metric">
+          <div class="case-metric-val">−90%</div>
+          <div class="case-metric-label">ручного труда</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════ PRICING ═══════ -->
+<section id="pricing">
+  <div class="pricing-header reveal">
+    <div class="section-tag">Тарифы</div>
+    <h2 class="section-title">Прозрачные цены</h2>
+    <p class="section-subtitle" style="margin:0 auto">Никаких скрытых платежей. Платите за результат.</p>
+    <div class="pricing-toggle">
+      <button class="active" id="toggle-monthly" onclick="setPricing('monthly')">Помесячно</button>
+      <button id="toggle-annual" onclick="setPricing('annual')">Годовой −20%</button>
+    </div>
+  </div>
+  <div class="pricing-grid">
+    <div class="price-card">
+      <div class="price-name">Старт</div>
+      <div class="price-amount" data-monthly="89 000" data-annual="71 000">89 000</div>
+      <div class="price-period">₽/месяц</div>
+      <ul class="price-features">
+        <li>
+          <span class="check">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+          </span>
+          1 AI агент
+        </li>
+        <li>
+          <span class="check">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+          </span>
+          До 1000 диалогов/мес
+        </li>
+        <li>
+          <span class="check">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+          </span>
+          Telegram / WhatsApp
+        </li>
+        <li>
+          <span class="check">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+          </span>
+          Базовая аналитика
+        </li>
+        <li class="feature-off">
+          <span class="cross">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" aria-hidden="true"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+          </span>
+          Голосовые звонки
+        </li>
+        <li class="feature-off">
+          <span class="cross">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" aria-hidden="true"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+          </span>
+          CRM интеграция
+        </li>
+      </ul>
+      <button class="price-btn btn-liquid magnetic" onclick="addRipple(event, this)">Начать</button>
+    </div>
+
+    <div class="price-card featured">
+      <div class="price-name">Бизнес</div>
+      <div class="price-amount" data-monthly="189 000" data-annual="151 000">189 000</div>
+      <div class="price-period">₽/месяц</div>
+      <ul class="price-features">
+        <li>
+          <span class="check">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+          </span>
+          До 5 AI агентов
+        </li>
+        <li>
+          <span class="check">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+          </span>
+          До 10 000 диалогов/мес
+        </li>
+        <li>
+          <span class="check">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+          </span>
+          Голосовые звонки
+        </li>
+        <li>
+          <span class="check">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+          </span>
+          CRM интеграция
+        </li>
+        <li>
+          <span class="check">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+          </span>
+          Продвинутая аналитика
+        </li>
+        <li>
+          <span class="check">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+          </span>
+          Приоритетная поддержка
+        </li>
+      </ul>
+      <button class="price-btn btn-liquid magnetic" onclick="addRipple(event, this)">Выбрать</button>
+    </div>
+
+    <div class="price-card">
+      <div class="price-name">Энтерпрайз</div>
+      <div class="price-amount">Custom</div>
+      <div class="price-period">Под ваш масштаб</div>
+      <ul class="price-features">
+        <li>
+          <span class="check">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+          </span>
+          Неограниченно агентов
+        </li>
+        <li>
+          <span class="check">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+          </span>
+          Безлимитные диалоги
+        </li>
+        <li>
+          <span class="check">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+          </span>
+          Выделенная инфраструктура
+        </li>
+        <li>
+          <span class="check">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+          </span>
+          SLA 99.9%
+        </li>
+        <li>
+          <span class="check">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+          </span>
+          Персональный менеджер
+        </li>
+        <li>
+          <span class="check">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+          </span>
+          Обучение команды
+        </li>
+      </ul>
+      <button class="price-btn btn-liquid magnetic" onclick="addRipple(event, this)">Обсудить</button>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════ FAQ ═══════ -->
+<section id="faq">
+  <div class="faq-wrapper">
+    <div class="faq-header reveal">
+      <div class="section-tag">FAQ</div>
+      <h2 class="section-title">Частые вопросы</h2>
+    </div>
+    <div id="faq-list">
+      <div class="faq-item">
+        <button class="faq-question" onclick="toggleFaq(this)" aria-expanded="false">
+          Сколько времени занимает внедрение?
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer">Первый рабочий агент — за 2–3 недели. Полноценная система — от 4 до 8 недель. Прототип показываем уже через 3 дня после старта.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question" onclick="toggleFaq(this)" aria-expanded="false">
+          Нужно ли менять процессы?
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer">Нет. Встраиваемся в существующие процессы. AI берёт повторяемые задачи, не ломая то что работает.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question" onclick="toggleFaq(this)" aria-expanded="false">
+          Что если AI ошибётся?
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer">Все агенты работают с fallback на человека. Если AI не уверен — передаёт диалог оператору. Мониторим качество в реальном времени.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question" onclick="toggleFaq(this)" aria-expanded="false">
+          Наши данные в безопасности?
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer">Да. Все данные шифруются, хранятся в российских ДЦ, NDA подписываем до старта. Опционально — деплой в вашем контуре.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question" onclick="toggleFaq(this)" aria-expanded="false">
+          Есть ли пробный период?
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer">Да. Бесплатный аудит и прототип за 3 дня. Платите только когда видите работающий результат.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════ CTA ═══════ -->
+<section id="cta">
+  <div class="cta-bg">
+    <div class="cta-orb cta-orb-1"></div>
+    <div class="cta-orb cta-orb-2"></div>
+    <div class="cta-orb cta-orb-3"></div>
+  </div>
+  <div class="cta-wrapper reveal">
+    <div class="section-tag" style="justify-content:center">Начать сейчас</div>
+    <h2 class="cta-title">Готовы к<br><span class="grad">автопилоту?</span></h2>
+    <p class="cta-sub">Оставьте email — мы пришлём персональный аудит и покажем прототип за 3 дня. Бесплатно.</p>
+    <div class="cta-form">
+      <input type="email" class="cta-input" placeholder="ваш@email.ru" aria-label="Email для связи">
+      <button class="btn-primary magnetic btn-liquid" onclick="addRipple(event, this)" style="white-space:nowrap">
+        Получить аудит <span class="btn-arrow">→</span>
+      </button>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════ FOOTER ═══════ -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-logo">NEXUS<span>.</span>AI</div>
+    <ul class="footer-links">
+      <li><a href="#services">Услуги</a></li>
+      <li><a href="#cases">Кейсы</a></li>
+      <li><a href="#pricing">Тарифы</a></li>
+      <li><a href="#">Политика</a></li>
+    </ul>
+    <div class="footer-copy">© 2025 NEXUS AI. Все права защищены.</div>
+  </div>
+</footer>
+
+<script src="main.js"></script>
+</body>
+</html>
