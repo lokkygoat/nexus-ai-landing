@@ -4,28 +4,28 @@
 *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
 
 :root {
-  --bg:           #04040e;
-  --bg2:          #080818;
-  --purple:       #7c3aed;
-  --purple-mid:   #8b5cf6;
-  --purple-light: #a78bfa;
-  --cyan:         #06b6d4;
-  --cyan-light:   #22d3ee;
+  --bg:           #0c0404;
+  --bg2:          #180808;
+  --purple:       #dc2626;
+  --purple-mid:   #ef4444;
+  --purple-light: #f87171;
+  --cyan:         #f97316;
+  --cyan-light:   #fb923c;
   --green:        #10b981;
   --green-light:  #34d399;
-  --red:          #f43f5e;
+  --red:          #f59e0b;
   --white:        #ffffff;
-  --text:         #e2e8f0;
-  --gray:         #94a3b8;
-  --gray-dim:     #64748b;
-  --border:       rgba(255,255,255,0.06);
-  --border-md:    rgba(255,255,255,0.10);
-  --border-hover: rgba(255,255,255,0.15);
-  --glass:        rgba(255,255,255,0.03);
-  --glass-hover:  rgba(255,255,255,0.055);
-  --glass-border: rgba(255,255,255,0.08);
-  --purple-glow:  rgba(124,58,237,0.3);
-  --cyan-glow:    rgba(6,182,212,0.2);
+  --text:         #fde2e2;
+  --gray:         #c9a0a0;
+  --gray-dim:     #8a5a5a;
+  --border:       rgba(255,80,80,0.08);
+  --border-md:    rgba(255,80,80,0.14);
+  --border-hover: rgba(255,80,80,0.22);
+  --glass:        rgba(255,40,40,0.035);
+  --glass-hover:  rgba(255,40,40,0.06);
+  --glass-border: rgba(255,80,80,0.10);
+  --purple-glow:  rgba(220,38,38,0.4);
+  --cyan-glow:    rgba(249,115,22,0.25);
 }
 
 html { scroll-behavior: smooth; }
@@ -57,7 +57,7 @@ body {
 
 #cursor-follower {
   width: 36px; height: 36px;
-  border: 1.5px solid rgba(6,182,212,0.5);
+  border: 1.5px solid rgba(249,115,22,0.5);
   border-radius: 50%;
   position: fixed;
   top: 0; left: 0;
@@ -73,7 +73,7 @@ body.cursor-hover #cursor {
 }
 body.cursor-hover #cursor-follower {
   width: 54px; height: 54px;
-  border-color: rgba(167,139,250,0.5);
+  border-color: rgba(248,113,113,0.5);
 }
 
 /* ═══════════════════════════════════════════
@@ -109,8 +109,8 @@ body::before {
   position: fixed;
   inset: 0;
   background-image:
-    linear-gradient(rgba(124,58,237,0.04) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(124,58,237,0.04) 1px, transparent 1px);
+    linear-gradient(rgba(220,38,38,0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(220,38,38,0.04) 1px, transparent 1px);
   background-size: 64px 64px;
   pointer-events: none;
   z-index: 0;
@@ -188,12 +188,12 @@ nav.scrolled {
   position: relative;
   overflow: hidden;
   transition: transform 0.2s, box-shadow 0.3s;
-  box-shadow: 0 0 20px rgba(124,58,237,0.35), inset 0 1px 0 rgba(255,255,255,0.1);
+  box-shadow: 0 0 20px rgba(220,38,38,0.35), inset 0 1px 0 rgba(255,255,255,0.1);
 }
 
 .nav-cta:hover {
   transform: translateY(-1px);
-  box-shadow: 0 0 30px rgba(124,58,237,0.55), inset 0 1px 0 rgba(255,255,255,0.15);
+  box-shadow: 0 0 30px rgba(220,38,38,0.55), inset 0 1px 0 rgba(255,255,255,0.15);
 }
 
 .nav-cta span { position: relative; z-index: 1; }
@@ -223,14 +223,14 @@ nav.scrolled {
 
 .hero-blob-1 {
   width: 600px; height: 600px;
-  background: radial-gradient(circle, rgba(124,58,237,0.18), transparent 70%);
+  background: radial-gradient(circle, rgba(220,38,38,0.18), transparent 70%);
   top: -200px; left: -100px;
   animation-delay: 0s;
 }
 
 .hero-blob-2 {
   width: 500px; height: 500px;
-  background: radial-gradient(circle, rgba(6,182,212,0.12), transparent 70%);
+  background: radial-gradient(circle, rgba(249,115,22,0.12), transparent 70%);
   bottom: -100px; right: -80px;
   animation-delay: -3s;
 }
@@ -266,8 +266,8 @@ nav.scrolled {
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  background: rgba(124,58,237,0.12);
-  border: 1px solid rgba(124,58,237,0.25);
+  background: rgba(220,38,38,0.12);
+  border: 1px solid rgba(220,38,38,0.25);
   border-radius: 100px;
   padding: 7px 18px;
   font-size: 13px;
@@ -429,12 +429,12 @@ nav.scrolled {
   overflow: hidden;
   transition: transform 0.2s, box-shadow 0.3s;
   text-decoration: none;
-  box-shadow: 0 0 28px rgba(124,58,237,0.4), inset 0 1px 0 rgba(255,255,255,0.12);
+  box-shadow: 0 0 28px rgba(220,38,38,0.4), inset 0 1px 0 rgba(255,255,255,0.12);
 }
 
 .btn-primary:hover {
   transform: translateY(-2px);
-  box-shadow: 0 0 48px rgba(124,58,237,0.6), inset 0 1px 0 rgba(255,255,255,0.15);
+  box-shadow: 0 0 48px rgba(220,38,38,0.6), inset 0 1px 0 rgba(255,255,255,0.15);
 }
 
 .btn-secondary {
@@ -513,7 +513,7 @@ nav.scrolled {
   padding: 80px 40px;
   border-top: 1px solid var(--border);
   border-bottom: 1px solid var(--border);
-  background: linear-gradient(180deg, rgba(124,58,237,0.03) 0%, transparent 100%);
+  background: linear-gradient(180deg, rgba(220,38,38,0.03) 0%, transparent 100%);
 }
 
 .stats-grid {
@@ -721,15 +721,15 @@ section { position: relative; z-index: 2; }
   content: '';
   position: absolute;
   inset: 0;
-  background: radial-gradient(circle at var(--mx, 50%) var(--my, 50%), rgba(124,58,237,0.12), transparent 60%);
+  background: radial-gradient(circle at var(--mx, 50%) var(--my, 50%), rgba(220,38,38,0.12), transparent 60%);
   opacity: 0;
   transition: opacity 0.35s;
   border-radius: 20px;
 }
 
 .service-card:hover {
-  border-color: rgba(124,58,237,0.35);
-  box-shadow: 0 12px 48px rgba(0,0,0,0.4), 0 0 0 1px rgba(124,58,237,0.1);
+  border-color: rgba(220,38,38,0.35);
+  box-shadow: 0 12px 48px rgba(0,0,0,0.4), 0 0 0 1px rgba(220,38,38,0.1);
 }
 
 .service-card:hover::before  { opacity: 1; }
@@ -799,7 +799,7 @@ section { position: relative; z-index: 2; }
 ═══════════════════════════════════════════ */
 #calculator {
   padding: 120px 40px;
-  background: linear-gradient(180deg, transparent 0%, rgba(124,58,237,0.05) 50%, transparent 100%);
+  background: linear-gradient(180deg, transparent 0%, rgba(220,38,38,0.05) 50%, transparent 100%);
 }
 
 .calc-wrapper { max-width: 1000px; margin: 0 auto; }
@@ -859,21 +859,21 @@ input[type="range"]::-webkit-slider-thumb {
   border-radius: 50%;
   background: linear-gradient(135deg, var(--purple-mid), var(--purple-light));
   cursor: none;
-  box-shadow: 0 0 14px rgba(124,58,237,0.6);
+  box-shadow: 0 0 14px rgba(220,38,38,0.6);
   border: 2px solid rgba(255,255,255,0.15);
   transition: transform 0.2s, box-shadow 0.2s;
 }
 
 input[type="range"]::-webkit-slider-thumb:hover {
   transform: scale(1.3);
-  box-shadow: 0 0 24px rgba(124,58,237,0.9);
+  box-shadow: 0 0 24px rgba(220,38,38,0.9);
 }
 
 .calc-hourly-box {
   padding: 16px 20px;
-  background: rgba(124,58,237,0.07);
+  background: rgba(220,38,38,0.07);
   border-radius: 12px;
-  border: 1px solid rgba(124,58,237,0.15);
+  border: 1px solid rgba(220,38,38,0.15);
 }
 
 .calc-hourly-label {
@@ -895,8 +895,8 @@ input[type="range"]::-webkit-slider-thumb:hover {
 .calc-results { display: flex; flex-direction: column; gap: 14px; }
 
 .calc-result-card {
-  background: rgba(124,58,237,0.07);
-  border: 1px solid rgba(124,58,237,0.15);
+  background: rgba(220,38,38,0.07);
+  border: 1px solid rgba(220,38,38,0.15);
   border-radius: 16px;
   padding: 20px 24px;
   transition: transform 0.25s, box-shadow 0.25s;
@@ -906,7 +906,7 @@ input[type="range"]::-webkit-slider-thumb:hover {
 
 .calc-result-card:hover {
   transform: translateY(-2px);
-  box-shadow: 0 8px 32px rgba(124,58,237,0.15);
+  box-shadow: 0 8px 32px rgba(220,38,38,0.15);
 }
 
 .calc-result-card.green-card {
@@ -915,8 +915,8 @@ input[type="range"]::-webkit-slider-thumb:hover {
 }
 
 .calc-result-card.cyan-card {
-  background: rgba(6,182,212,0.07);
-  border-color: rgba(6,182,212,0.2);
+  background: rgba(249,115,22,0.07);
+  border-color: rgba(249,115,22,0.2);
 }
 
 .calc-result-label {
@@ -966,13 +966,13 @@ input[type="range"]::-webkit-slider-thumb:hover {
   overflow: hidden;
   position: relative;
   transition: transform 0.2s, box-shadow 0.3s;
-  box-shadow: 0 0 28px rgba(124,58,237,0.35);
+  box-shadow: 0 0 28px rgba(220,38,38,0.35);
   letter-spacing: 0.2px;
 }
 
 .calc-cta:hover {
   transform: translateY(-2px);
-  box-shadow: 0 0 48px rgba(124,58,237,0.55);
+  box-shadow: 0 0 48px rgba(220,38,38,0.55);
 }
 
 /* ═══════════════════════════════════════════
@@ -1139,7 +1139,7 @@ input[type="range"]::-webkit-slider-thumb:hover {
 ═══════════════════════════════════════════ */
 #cases {
   padding: 120px 40px;
-  background: linear-gradient(180deg, transparent 0%, rgba(6,182,212,0.03) 50%, transparent 100%);
+  background: linear-gradient(180deg, transparent 0%, rgba(249,115,22,0.03) 50%, transparent 100%);
 }
 
 .cases-header { max-width: 1100px; margin: 0 auto 64px; }
@@ -1175,7 +1175,7 @@ input[type="range"]::-webkit-slider-thumb:hover {
 }
 
 .case-card:hover {
-  border-color: rgba(6,182,212,0.3);
+  border-color: rgba(249,115,22,0.3);
   transform: translateY(-6px);
   box-shadow: 0 20px 60px rgba(0,0,0,0.4);
 }
@@ -1185,8 +1185,8 @@ input[type="range"]::-webkit-slider-thumb:hover {
 .case-tag {
   display: inline-block;
   padding: 4px 12px;
-  background: rgba(6,182,212,0.1);
-  border: 1px solid rgba(6,182,212,0.2);
+  background: rgba(249,115,22,0.1);
+  border: 1px solid rgba(249,115,22,0.2);
   border-radius: 100px;
   font-size: 10px;
   font-weight: 700;
@@ -1273,7 +1273,7 @@ input[type="range"]::-webkit-slider-thumb:hover {
 .pricing-toggle button.active {
   background: var(--purple);
   color: white;
-  box-shadow: 0 0 16px rgba(124,58,237,0.4);
+  box-shadow: 0 0 16px rgba(220,38,38,0.4);
 }
 
 .pricing-grid {
@@ -1304,7 +1304,7 @@ input[type="range"]::-webkit-slider-thumb:hover {
 /* Featured card with gradient border */
 .price-card.featured {
   position: relative;
-  background: rgba(124,58,237,0.07);
+  background: rgba(220,38,38,0.07);
   border-color: transparent;
 }
 
@@ -1335,7 +1335,7 @@ input[type="range"]::-webkit-slider-thumb:hover {
   padding: 4px 16px;
   border-radius: 100px;
   white-space: nowrap;
-  box-shadow: 0 4px 16px rgba(124,58,237,0.5);
+  box-shadow: 0 4px 16px rgba(220,38,38,0.5);
 }
 
 .price-name {
@@ -1440,11 +1440,11 @@ input[type="range"]::-webkit-slider-thumb:hover {
 .price-card.featured .price-btn {
   background: linear-gradient(135deg, var(--purple), var(--purple-mid));
   border-color: transparent;
-  box-shadow: 0 0 24px rgba(124,58,237,0.4);
+  box-shadow: 0 0 24px rgba(220,38,38,0.4);
 }
 
 .price-card.featured .price-btn:hover {
-  box-shadow: 0 0 40px rgba(124,58,237,0.6);
+  box-shadow: 0 0 40px rgba(220,38,38,0.6);
   transform: translateY(-2px);
 }
 
@@ -1453,7 +1453,7 @@ input[type="range"]::-webkit-slider-thumb:hover {
 ═══════════════════════════════════════════ */
 #faq {
   padding: 120px 40px;
-  background: linear-gradient(180deg, transparent 0%, rgba(124,58,237,0.04) 50%, transparent 100%);
+  background: linear-gradient(180deg, transparent 0%, rgba(220,38,38,0.04) 50%, transparent 100%);
 }
 
 .faq-wrapper { max-width: 740px; margin: 0 auto; }
@@ -1470,8 +1470,8 @@ input[type="range"]::-webkit-slider-thumb:hover {
 }
 
 .faq-item.open {
-  border-color: rgba(124,58,237,0.3);
-  box-shadow: 0 0 32px rgba(124,58,237,0.08);
+  border-color: rgba(220,38,38,0.3);
+  box-shadow: 0 0 32px rgba(220,38,38,0.08);
 }
 
 .faq-question {
@@ -1508,8 +1508,8 @@ input[type="range"]::-webkit-slider-thumb:hover {
 
 .faq-item.open .faq-icon {
   transform: rotate(45deg);
-  background: rgba(124,58,237,0.2);
-  border-color: rgba(124,58,237,0.3);
+  background: rgba(220,38,38,0.2);
+  border-color: rgba(220,38,38,0.3);
 }
 
 .faq-answer {
@@ -1549,14 +1549,14 @@ input[type="range"]::-webkit-slider-thumb:hover {
 
 .cta-orb-1 {
   width: 600px; height: 600px;
-  background: radial-gradient(circle, rgba(124,58,237,0.18), transparent 70%);
+  background: radial-gradient(circle, rgba(220,38,38,0.18), transparent 70%);
   left: 50%; top: 50%;
   transform: translate(-50%, -50%);
 }
 
 .cta-orb-2 {
   width: 300px; height: 300px;
-  background: radial-gradient(circle, rgba(6,182,212,0.12), transparent 70%);
+  background: radial-gradient(circle, rgba(249,115,22,0.12), transparent 70%);
   right: 20%; top: 20%;
 }
 
@@ -1620,8 +1620,8 @@ input[type="range"]::-webkit-slider-thumb:hover {
 .cta-input::placeholder { color: var(--gray-dim); }
 
 .cta-input:focus {
-  border-color: rgba(124,58,237,0.5);
-  box-shadow: 0 0 24px rgba(124,58,237,0.12);
+  border-color: rgba(220,38,38,0.5);
+  box-shadow: 0 0 24px rgba(220,38,38,0.12);
 }
 
 /* ═══════════════════════════════════════════
@@ -1719,7 +1719,7 @@ footer {
   font-size: 16px;
   font-weight: 600;
   cursor: none;
-  box-shadow: 0 0 24px rgba(124,58,237,0.4);
+  box-shadow: 0 0 24px rgba(220,38,38,0.4);
 }
 
 .particle {

@@ -93,14 +93,14 @@ function drawNeural() {
         ctx.beginPath();
         ctx.moveTo(nodes[i].x, nodes[i].y);
         ctx.lineTo(nodes[j].x, nodes[j].y);
-        ctx.strokeStyle = `rgba(124,58,237,${(1 - d / 130) * 0.3})`;
+        ctx.strokeStyle = `rgba(220,38,38,${(1 - d / 130) * 0.45})`;
         ctx.lineWidth = 0.8;
         ctx.stroke();
       }
     }
     ctx.beginPath();
     ctx.arc(nodes[i].x, nodes[i].y, nodes[i].r, 0, Math.PI * 2);
-    ctx.fillStyle = `rgba(0,212,255,${nodes[i].opacity})`;
+    ctx.fillStyle = `rgba(255,120,120,${nodes[i].opacity})`;
     ctx.fill();
   }
   requestAnimationFrame(drawNeural);
@@ -384,7 +384,7 @@ document.getElementById('ee-close').addEventListener('click', () => {
 });
 
 function spawnParticles() {
-  const colors = ['#7c3aed', '#00d4ff', '#00ff88', '#a855f7', '#ff4757'];
+  const colors = ['#dc2626', '#ef4444', '#f87171', '#f97316', '#fb923c'];
   for (let i = 0; i < 60; i++) {
     setTimeout(() => {
       const p    = document.createElement('div');

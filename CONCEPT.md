@@ -20,8 +20,8 @@
 
 ## Дизайн
 
-- **Тема:** Dark (почти чёрный `#0a0a0f`)
-- **Акценты:** Electric purple `#7c3aed` + Cyan `#00d4ff` + Green `#00ff88`
+- **Тема:** Dark-red (глубокий бордово-чёрный `#0c0404`)
+- **Акценты:** Crimson red `#dc2626` + Orange `#f97316` + Light red `#f87171`
 - **Стиль:** Glassmorphism, grain texture, тонкая grid-сетка на фоне
 - **Шрифты:** Space Grotesk (заголовки) + Inter (текст)
 - **Ощущение:** Vercel × Linear × премиум агентство
